@@ -183,7 +183,7 @@ Remove a Tea from Subscription
 
 ### Customer Subscriptions
 
-Get All Subscriptions by Customer
+Get All Subscriptions by Customer (both active and inactive)
 
 > URL: /customers_subscriptions/by_customer/:customer_id
 >
