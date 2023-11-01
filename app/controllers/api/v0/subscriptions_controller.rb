@@ -34,8 +34,11 @@ class Api::V0::SubscriptionsController < ApplicationController
 
   # DELETE /subscriptions/1
   def destroy
-    @subscription.destroy
-    head :no_content
+    if @subscription.destroy
+      render json: { message: 'Subscription removed successfully' }, status: :ok
+    else
+      render json: { error: 'Failed to remove subscription' }, status: :unprocessable_entity
+    end
   end
 
   # Use callbacks to share common setup or constraints between actions.
