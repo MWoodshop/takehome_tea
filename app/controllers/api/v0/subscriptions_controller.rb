@@ -50,6 +50,6 @@ class Api::V0::SubscriptionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def subscription_params
-    params.require(:subscription).permit(:title, :price, :status, :frequency)
+    params.require(:subscription).permit(:title, :price, :frequency)
   end
 end

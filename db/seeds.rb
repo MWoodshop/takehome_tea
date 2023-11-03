@@ -67,25 +67,21 @@ subscriptions = [
   {
     title: 'Green Tea Subscription',
     price: 10.00,
-    status: 'active',
     frequency: 'weekly'
   },
   {
     title: 'Black Tea Subscription',
     price: 12.50,
-    status: 'active',
     frequency: 'weekly'
   },
   {
     title: 'Green Tea Subscription',
     price: 13.00,
-    status: 'active',
     frequency: 'weekly'
   },
   {
     title: 'Oolong Tea Subscription',
     price: 11.75,
-    status: 'active',
     frequency: 'weekly'
   }
 ]

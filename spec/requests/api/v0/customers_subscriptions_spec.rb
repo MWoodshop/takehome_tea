@@ -3,9 +3,9 @@ require 'rails_helper'
 # Happy Path
 RSpec.describe 'Api::V0::CustomersSubscriptions', type: :request do
   before(:each) do
-    @subscription = Subscription.create!(title: 'Test Subscription', price: 10.00, status: 'active',
+    @subscription = Subscription.create!(title: 'Test Subscription', price: 10.00,
                                          frequency: 'weekly')
-    @subscription2 = Subscription.create!(title: 'Test Subscription 2', price: 10.00, status: 'active',
+    @subscription2 = Subscription.create!(title: 'Test Subscription 2', price: 10.00,
                                           frequency: 'weekly')
     @customer = Customer.create!(first_name: 'John', last_name: 'Doe', email: 'jdoe@test.com', address: '123 Main St')
     @customer2 = Customer.create!(first_name: 'Jane', last_name: 'Smith', email: 'jsmith@test.com',
@@ -65,9 +65,9 @@ end
 # Sad Path
 RSpec.describe 'Api::V0::CustomersSubscriptions', type: :request do
   before(:each) do
-    @subscription = Subscription.create!(title: 'Test Subscription', price: 10.00, status: 'active',
+    @subscription = Subscription.create!(title: 'Test Subscription', price: 10.00,
                                          frequency: 'weekly')
-    @subscription2 = Subscription.create!(title: 'Test Subscription 2', price: 10.00, status: 'active',
+    @subscription2 = Subscription.create!(title: 'Test Subscription 2', price: 10.00,
                                           frequency: 'weekly')
     @customer = Customer.create!(first_name: 'John', last_name: 'Doe', email: 'jdoe@test.com', address: '123 Main St')
     @customer2 = Customer.create!(first_name: 'Jane', last_name: 'Smith', email: 'jsmith@test.com',

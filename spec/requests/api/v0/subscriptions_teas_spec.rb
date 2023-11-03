@@ -3,7 +3,7 @@ require 'rails_helper'
 # Happy Path
 RSpec.describe 'Api::V0::SubscriptionsTeas', type: :request do
   before(:each) do
-    @subscription = Subscription.create!(title: 'Test Subscription', price: 10.00, status: 'active',
+    @subscription = Subscription.create!(title: 'Test Subscription', price: 10.00,
                                          frequency: 'weekly')
     @tea = Tea.create!(title: 'Test Tea', description: 'A Tea for Testing!', temperature: 90, brewtime: 120)
     @tea2 = Tea.create!(title: 'Test Tea 2', description: 'A Tea for Testing Twice!', temperature: 90, brewtime: 120)
@@ -37,7 +37,7 @@ end
 # Sad Path
 RSpec.describe 'Api::V0::SubscriptionsTeas', type: :request do
   before(:each) do
-    @subscription = Subscription.create!(title: 'Test Subscription', price: 10.00, status: 'active',
+    @subscription = Subscription.create!(title: 'Test Subscription', price: 10.00,
                                          frequency: 'weekly')
     @tea = Tea.create!(title: 'Test Tea', description: 'A Tea for Testing!', temperature: 90, brewtime: 120)
     @tea2 = Tea.create!(title: 'Test Tea 2', description: 'A Tea for Testing Twice!', temperature: 90, brewtime: 120)

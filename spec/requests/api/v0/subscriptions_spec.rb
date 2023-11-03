@@ -3,7 +3,7 @@ require 'rails_helper'
 # Happy Path
 RSpec.describe 'Api::V0::Subscriptions', type: :request do
   before(:each) do
-    @subscription = Subscription.create!(title: 'Test Subscription', price: 10.00, status: 'active',
+    @subscription = Subscription.create!(title: 'Test Subscription', price: 10.00,
                                          frequency: 'weekly')
   end
 
@@ -24,7 +24,7 @@ RSpec.describe 'Api::V0::Subscriptions', type: :request do
   describe 'POST /create' do
     it 'creates a new subscription' do
       post api_v0_subscriptions_path,
-           params: { subscription: { title: 'Second Test Subscription', price: 15.00, status: 'active',
+           params: { subscription: { title: 'Second Test Subscription', price: 15.00,
                                      frequency: 'monthly' } }
       expect(response).to have_http_status(:created)
     end
@@ -49,7 +49,7 @@ end
 # Sad Path
 RSpec.describe 'Api::V0::Subscriptions', type: :request do
   before(:each) do
-    @subscription = Subscription.create!(title: 'Test Subscription', price: 'A Subscription for Testing!', status: 200,
+    @subscription = Subscription.create!(title: 'Test Subscription', price: 'A Subscription for Testing!',
                                          frequency: 5)
   end
 
@@ -62,7 +62,7 @@ RSpec.describe 'Api::V0::Subscriptions', type: :request do
 
   describe 'POST /create' do
     it 'returns unprocessable_entity status' do
-      post api_v0_subscriptions_path, params: { subscription: { title: '', price: '', status: '', frequency: '' } }
+      post api_v0_subscriptions_path, params: { subscription: { title: '', price: '', frequency: '' } }
       expect(response).to have_http_status(:unprocessable_entity)
     end
   end
@@ -70,7 +70,7 @@ RSpec.describe 'Api::V0::Subscriptions', type: :request do
   describe 'PATCH /update' do
     it 'returns unprocessable_entity status' do
       patch api_v0_subscription_path(@subscription),
-            params: { subscription: { title: '', price: '', status: '', frequency: '' } }
+            params: { subscription: { title: '', price: '', frequency: '' } }
       expect(response).to have_http_status(:unprocessable_entity)
     end
   end
