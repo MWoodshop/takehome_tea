@@ -28,7 +28,8 @@ teas = [
   {
     title: 'Herbal Tea',
     description: 'Made from herbs, fruits, seeds, or roots.',
-    temperature: 150
+    temperature: 150,
+    brewtime: 320
   }
 ]
 
